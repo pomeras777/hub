@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Последние проекты</h2>
+<ul>
+  {% for id, title, description in projects %}
+    <li><a href="/projects/{{ id }}">{{ title }}</a> — {{ description }}</li>
+  {% endfor %}
+</ul>
+<a href="/upload">+ Загрузить проект</a>
+{% endblock %}

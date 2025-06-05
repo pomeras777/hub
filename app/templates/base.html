@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title or 'itbasetech' }}</title>
+  <link href="/static/styles.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+  <link rel="manifest" href="static/site.webmanifest">
+</head>
+<body class="bg-[#0f041d] text-white">
+<header class="bg-white shadow p-4 flex justify-between items-center">
+  <div class="flex items-center space-x-2">
+    <img src="/static/logo_png.png" alt="logo" class="h-10 w-10">
+    <span class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
+      itbasetech
+    </span>
+  </div>
+  <nav class="space-x-4">
+    <a href="/" class="text-gray-600 hover:text-purple-600">Главная</a>
+    <a href="/upload" class="text-gray-600 hover:text-purple-600">Загрузить</a>
+    <a href="/login" class="text-gray-600 hover:text-purple-600">Вход</a>
+    <a href="/register" class="text-gray-600 hover:text-purple-600">Регистрация</a>
+  </nav>
+</header>
+
+  <main class="max-w-4xl mx-auto py-8 px-4">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

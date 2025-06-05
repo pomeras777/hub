@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="bg-gradient-to-b from-orange-400 via-purple-500 to-purple-700 min-h-screen py-12 px-4 text-white font-sans">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="inline-block w-24 h-24 rounded-full bg-white text-purple-700 flex items-center justify-center text-4xl font-bold shadow-lg">
+      {{ username[0]|upper }}
+    </div>
+    <h2 class="mt-4 text-3xl font-bold">{{ username }}</h2>
+    <p class="text-purple-200 text-sm">Профиль участника платформы itbasetech</p>
+  </div>
+
+  {% if projects %}
+  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    {% for id, title, description in projects %}
+    <div class="bg-white text-gray-800 rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6">
+      <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>
+      <p class="text-sm text-gray-600 mb-4">{{ description[:120] }}...</p>
+      <a href="/projects/{{ id }}" class="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-purple-600 text-white rounded hover:brightness-110">
+        Открыть →
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-center text-purple-200 mt-10">У пользователя пока нет проектов.</p>
+  {% endif %}
+</section>
+{% endblock %}
